@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="registration.css">
+
+</head>
+<body>
+
+<form id="logInForm" action="signup.php" method="POST">
+  <div class="container2" style="margin-left: 20%; margin-top: 3%">
+    <center>
+    <h2> REGISTRATION</h2x  ></center>
+    <hr>
+
+    <label style="margin-left: 20px" for="LastName"><b>Last Name</b></label>
+    <label style="margin-left: 40%" for="UserName"><b>Username</b></label>
+    <input class="input" style="margin-left: 20px" type="text" placeholder="Last Name" name="LastName" id="LastName" required>    
+    <input class="input" style="margin-left: 40px" type="text" placeholder="User Name" name="UserName" id="UserName" required>
+
+    <label style="margin-left: 20px" for="FirstName"><b>First Name</b></label>
+    <label style="margin-left: 30%" for="M.I"><b>M.I</b></label>
+    <label style="margin-left: 60px; margin-right: 20%" for="Password"><b>Password</b></label>
+    <input class="first" style="margin-left: 20px" type="text" placeholder="First Name" name="FirstName" id="FirstName" required>
+    <input class="mi" style="margin-left: 15px" type="text" placeholder="M.I" name="Middle" id="Middle" required>
+    <input class="input" style="margin-left: 35px" type="password" placeholder="Password" name="Password" id="Password" required>
+
+    <label style="margin-left: 20px" for="StudentNumber"><b>Student Number</b></label>
+    <label style="margin-left: 35%" for="ConfirmPassword"><b>Confirm Password</b></label>
+    <input class="input" style="margin-left: 20px" type="text" placeholder="Student Number" name="StudentNumber" id="StudentNumber" required>    
+    <input class="input" style="margin-left: 40px" type="password" placeholder="Repeat Password" name="ConfirmPass" id="ConfirmPass" required>
+
+    <label style="margin-left: 20px" for="Year"><b>Year Level</b></label>
+    
+    <select name="Year" id="Year" required>
+    <option> </option>
+    <option value="1st">1st</option>
+    <option value="2nd">2nd</option>
+    <option value="3rd">3rd</option>
+    <option value="4th">4th</option>
+    <option value="5th">5th</option>
+    </select>
+    
+    <label style="margin-left: 35px" for="Birthday"><b>Birthday</b></label>
+    <script type="text/javascript">
+    var datefield=document.createElement("input")
+    datefield.setAttribute("type", "date")
+    if (datefield.type!="date"){ //if browser doesn't support input type="date", load files for jQuery UI Date Picker
+        document.write('<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />\n')
+        document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"><\/script>\n')
+        document.write('<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"><\/script>\n') 
+    }
+    </script>
+ 
+    <script>
+    if (datefield.type!="date"){ //if browser doesn't support input type="date", initialize date picker widget:
+    jQuery(function($){ //on document.ready
+        $('#birthday').datepicker();
+    })
+    }
+    </script>
+    </head>
+ 
+    <body>
+    <form>
+    <input type="date" id="Birthday" name="Birthday" size="20" required />
+    </form>
+
+    <input style="margin-left: 40px" type="checkbox" id="Terms" name="Terms" onclick="myFunction()">
+    <label for="Terms"><b>Terms & Condition</b></label>
+
+    <div><br>
+    <label style="margin-left: 20px; margin-right: 80%" for="Number"><b>Moblie Number</b></label>
+    <input  style="margin-left: 20px" class="input" type="text" placeholder="+63 XXXXXXXXX" name="Number" id="Number" required>
+    <p id="text" style="display:none; text-align: center; margin-top:-95px; margin-left: 450px; margin-bottom: 60px">This is to serve that all the data you input will be confidentially between the user and the developers only.</p>
+    </div>
+
+    <script>
+    function myFunction() {
+    var checkBox = document.getElementById("Terms");
+    var text = document.getElementById("text");
+    if (checkBox.checked == true){
+        text.style.display = "block";
+    } else {
+     text.style.display = "none";
+    }
+    }
+    </script>
+    
+    <div>
+    <label style="margin-left: 20px; margin-right: 80%" for="UEemail"><b>UE Email Address</b></label>
+    <input  style="margin-left: 20px" class="input" type="text" placeholder="Email" name="UEemail" id="UEemail" required>
+    
+
+    <button style="margin-left: 40px; font-size: 15px" type="submit" class="registerbtn" name="Register" id="Register" onclick="return myFunction()">Register</button>
+    </div>
+    
+    
+
+    
+  </div>
+</form>
+
+</body>
+</html>

@@ -1,104 +1,143 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="registration.css">
-
+    <link rel="stylesheet" href="registration.css">
+<script src="val.js"></script>
+    <title>Database </title>
 </head>
 <body>
+    <div class="container">
+        <div class="header">
+            <center>
+            <h2>Registration</h2>
+            </center>
+        </div>
+        <form id="form" action="UserRegistration.php" method ="POST" class="form">
+            
+            <div class="form-control">
+                <label for="lastName">Last Name<p style="margin-left: 550%;margin-top: -25%">Username</p></label>
+               
+                <input class="form-control-input" style="margin-top: -10px" type="text" placeholder="Last Name" id="lastName" name="lastName" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control"> 
+                <label for="Username"></label>
+                <input class="form-control-input" style="margin-left: 52%; margin-top: -58px" type="text" placeholder="Username" id="Username" name="Username" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small style="margin-left: 50%;">Error message</small>
+            </div>
 
-<form id="logInForm" action="signup.php" method="POST">
-  <div class="container2" style="margin-left: 20%; margin-top: 3%">
-    <center>
-    <h2> REGISTRATION</h2x  ></center>
-    <hr>
+            <div class="form-control">
+                <label style="margin-top: 15px" for="lastName">First Name<p style="margin-left: 442%;margin-top: -20%">M.I</p><p style="margin-left: 545%;margin-top: -45%">Password</p></label>
+               
+                <input class="form-control-first" style="margin-top: -15px" type="text" placeholder="First Name" id="firstName" name="firstName" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="Middle"></label>
+                <input class="form-control-mi" style="margin-left: 42%; margin-top: -58px" type="text" placeholder="M.I" id="Middle" name="Middle" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small style="margin-left: 50%;">Error message</small>
+            </div>
+            <div class="form-control"> 
+                <label for="Password"></label>
+                <input class="form-control-input" style="margin-left: 52%; margin-top: -58px;margin-bottom: 5px" type="password" placeholder="Password" id="Password" name="Password" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small style="margin-left: 50%;">Error message</small>
+            </div>
 
-    <label style="margin-left: 20px" for="LastName"><b>Last Name</b></label>
-    <label style="margin-left: 40%" for="UserName"><b>Username</b></label>
-    <input class="input" style="margin-left: 20px" type="text" placeholder="Last Name" name="LastName" id="LastName" required>    
-    <input class="input" style="margin-left: 40px" type="text" placeholder="User Name" name="UserName" id="UserName" required>
+            <div class="form-control">
+                <label style="margin-top: 10px" for="StudentNumber">Student Number<p style="margin-left: 327%;margin-top: -20px">Confirm.Password</p></label>
+               
+                <input class="form-control-input" style="margin-top: -10px" type="text" placeholder="Student Number" id="StudentNumber" name="StudentNumber" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control"> 
+                <label for="ConfirmPass"></label>
+                <input class="form-control-input" style="margin-left: 52%; margin-top: -58px" type="password" placeholder="Repeat Password" id="ConfirmPass" name="ConfirmPass" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small style="margin-left: 50%;">Error message</small>
+            </div>
 
-    <label style="margin-left: 20px" for="FirstName"><b>First Name</b></label>
-    <label style="margin-left: 30%" for="M.I"><b>M.I</b></label>
-    <label style="margin-left: 60px; margin-right: 20%" for="Password"><b>Password</b></label>
-    <input class="first" style="margin-left: 20px" type="text" placeholder="First Name" name="FirstName" id="FirstName" required>
-    <input class="mi" style="margin-left: 15px" type="text" placeholder="M.I" name="Middle" id="Middle" required>
-    <input class="input" style="margin-left: 35px" type="password" placeholder="Password" name="Password" id="Password" required>
+            <div class="form-control">
+                <label style="margin-top: 10px; margin-bottom: 10px" for="Year">Year Level<p style="margin-left: 115px;margin-top: -20px">Birthday</p><p style="margin-left: 430px; margin-top: -30px">Mobile Number</p></label>
+                
+                <select class="form-control-year" style="margin-top: -25px" name="Year" id="Year">
+                <option> </option>
+                <option value="1st">1st</option>
+                <option value="2nd">2nd</option>
+                <option value="3rd">3rd</option>
+                <option value="4th">4th</option>
+                <option value="5th">5th</option>
+                </select>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error Message</small>
+            </div>
+            <div class="form-control">
+                <label for="Birthday"></label>
+                <input class="form-control-bday" type="date" id="Birthday" name="Birthday">
+                <script type="text/javascript">
+                var datefield=document.createElement("input")
+                datefield.setAttribute("type", "date")
+                if (datefield.type!="date"){ //if browser doesn't support input type="date", load files for jQuery UI Date Picker
+                    document.write('<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />\n')
+                    document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"><\/script>\n')
+                    document.write('<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"><\/script>\n') 
+                }
+                </script>
+             
+                <script>
+                if (datefield.type!="date"){ //if browser doesn't support input type="date", initialize date picker widget:
+                jQuery(function($){ //on document.ready
+                    $('#birthday').datepicker();
+                })
+                }
+                </script>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control"> 
+                <label for="cpNumber"></label>
+                <input class="form-control-input" style="margin-left: 52%; margin-top: -77px;margin-bottom: 5px" type="text" placeholder="+63 9XXXXXXXXX" id="cpNumber" name="cpNumber" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small style="margin-left: 50%;">Error message</small>
+            </div>
 
-    <label style="margin-left: 20px" for="StudentNumber"><b>Student Number</b></label>
-    <label style="margin-left: 35%" for="ConfirmPassword"><b>Confirm Password</b></label>
-    <input class="input" style="margin-left: 20px" type="text" placeholder="Student Number" name="StudentNumber" id="StudentNumber" required>    
-    <input class="input" style="margin-left: 40px" type="password" placeholder="Repeat Password" name="ConfirmPass" id="ConfirmPass" required>
+            <div class="form-control">
+                <label style="margin-bottom: 10px" for="Email">Email</label>
+                <input class="form-control-input" type="email" placeholder="email@ue.edu.ph" id="Email" name="Email" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control"> 
+                
+                <label style="margin-left: 25px; margin-top: 20px" for="Terms and Condition">Term&Condition
+                <input style="margin-left: -140px" type="checkbox" id="Terms" name="Terms" onclick="" required><p id="text" style="text-align: center; margin-top:-95px; margin-left: 450px; margin-bottom: 60px">This is to serve that all the data you input will be confidentially between the user and the developers only.</p></label>
+                
+                
+            </div>
 
-    <label style="margin-left: 20px" for="Year"><b>Year Level</b></label>
-    
-    <select name="Year" id="Year" required>
-    <option> </option>
-    <option value="1st">1st</option>
-    <option value="2nd">2nd</option>
-    <option value="3rd">3rd</option>
-    <option value="4th">4th</option>
-    <option value="5th">5th</option>
-    </select>
-    
-    <label style="margin-left: 35px" for="Birthday"><b>Birthday</b></label>
-    <script type="text/javascript">
-    var datefield=document.createElement("input")
-    datefield.setAttribute("type", "date")
-    if (datefield.type!="date"){ //if browser doesn't support input type="date", load files for jQuery UI Date Picker
-        document.write('<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />\n')
-        document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"><\/script>\n')
-        document.write('<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"><\/script>\n') 
-    }
-    </script>
- 
-    <script>
-    if (datefield.type!="date"){ //if browser doesn't support input type="date", initialize date picker widget:
-    jQuery(function($){ //on document.ready
-        $('#birthday').datepicker();
-    })
-    }
-    </script>
-    </head>
- 
-    <body>
-    <form>
-    <input type="date" id="Birthday" name="Birthday" size="20" required />
-    </form>
-
-    <input style="margin-left: 40px" type="checkbox" id="Terms" name="Terms" onclick="myFunction()">
-    <label for="Terms"><b>Terms & Condition</b></label>
-
-    <div><br>
-    <label style="margin-left: 20px; margin-right: 80%" for="Number"><b>Moblie Number</b></label>
-    <input  style="margin-left: 20px" class="input" type="text" placeholder="+63 XXXXXXXXX" name="Number" id="Number" required>
-    <p id="text" style="display:none; text-align: center; margin-top:-95px; margin-left: 450px; margin-bottom: 60px">This is to serve that all the data you input will be confidentially between the user and the developers only.</p>
+          
+            
+            <button onclick="return myFunction()" id="register" name="register">Submit</button>
+            
+        </form>
     </div>
 
-    <script>
-    function myFunction() {
-    var checkBox = document.getElementById("Terms");
-    var text = document.getElementById("text");
-    if (checkBox.checked == true){
-        text.style.display = "block";
-    } else {
-     text.style.display = "none";
-    }
-    }
-    </script>
-    
-    <div>
-    <label style="margin-left: 20px; margin-right: 80%" for="UEemail"><b>UE Email Address</b></label>
-    <input  style="margin-left: 20px" class="input" type="text" placeholder="Email" name="UEemail" id="UEemail" required>
-    
-
-    <button style="margin-left: 40px; font-size: 15px" type="submit" class="registerbtn" name="Register" id="Register" onclick="return myFunction()">Register</button>
-    </div>
-    
-    
-
-    
-  </div>
-</form>
 
 </body>
 </html>

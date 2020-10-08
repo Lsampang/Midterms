@@ -1,27 +1,48 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="log-in.css">
+<script src="validation.js"> </script>
 
 <body>
-<form id="log-in.html" action="log-in.php" method="post" >
+<form id="form" action="#" method="post" >
 
                             <h3>ACCOUNT LOGIN</h3>
-                        
+    <div class= "form-control">                   
     <label id = "label1" for= "username" ><b>Username</b></label><br>
     <input type = "text" name = "username" id = "input1" required><br>
-                       
-	<label id = "label1" for="password" ><b>Password</b></label><br>
-	
-                <input type="password" name="password" id="input1"  required><br>
+	  <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+    </div>              
+	 <div class= "form-control">			 
+	<label id = "label1" for="password" ><b>Password</b></label><br>				
+    <input type="password" value="" name="Password" id="Password" required><br>
+	  <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+               
+    </div>
+	<input type="checkbox" onclick="myFunction()"> Show Password 
+	<a style="margin-left:47%" href="#">Forgot password?</a>
+										
+										<script>
+										function myFunction() {
+										var x = document.getElementById("Password");
+										if (x.type === "password") {
+										x.type = "text";
+										} else {
+										x.type = "password";
+										  }
+										}
+										</script>
 				
-				<input id ="check-box" type="checkbox"><label id = "showpass" for="showpass" >Show Password</label><br>
-                <input id = "btn"type="submit" class="btn" value="LOG-IN" name= "submit" id= "input1">
+    <input id = "btn"type="submit" class="btn" value="LOG-IN" name= "submit" id= "input1" onclick="return myFunction()">
 							
                 <p id= "register-link">Don't have an account?
-                <a href="registration.html">Register here</a>
+                <a href="secondPage.html">Register here</a>
                             </p>
                         </form>
-		
+										
+										
+				
 </body>	
 
 </html>

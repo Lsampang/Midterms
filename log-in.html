@@ -1,48 +1,47 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="log-in.css">
-<script src="validation.js"> </script>
-
+<head>
+    <link rel="stylesheet" href="log-in.css">
+<script src="validation.js"></script>
+    <title>Database </title>
+</head>
 <body>
-<form id="form" action="#" method="post" >
-
-                            <h3>ACCOUNT LOGIN</h3>
-    <div class= "form-control">                   
-    <label id = "label1" for= "username" ><b>Username</b></label><br>
-    <input type = "text" name = "username" id = "input1" required><br>
-	  <i class="fas fa-check-circle"></i>
+    <div class="container">
+        <div class="header">
+            <center>
+            <h2>ACCOUNT LOG-IN</h2>
+            </center>
+        </div>
+         <form id="form" action="UserRegistration.php" method ="POST" class="form">
+            
+            <div class="form-control">
+                <label for="username">Username</label>
+                <input type="text" placeholder="username" id="username" name="username" />
+                <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
-    </div>              
-	 <div class= "form-control">			 
-	<label id = "label1" for="password" ><b>Password</b></label><br>				
-    <input type="password" value="" name="Password" id="Password" required><br>
-	  <i class="fas fa-check-circle"></i>
+                <small>Error message</small>
+            </div>
+            
+            <div class="form-control">
+                <label for="username">Password</label>
+                <input type="password" placeholder="Password" id="password" name="password"/>
+                <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
-               
-    </div>
-	<input type="checkbox" onclick="myFunction()"> Show Password 
-	<a style="margin-left:47%" href="#">Forgot password?</a>
-										
-										<script>
-										function myFunction() {
-										var x = document.getElementById("Password");
-										if (x.type === "password") {
-										x.type = "text";
-										} else {
-										x.type = "password";
-										  }
-										}
-										</script>
-				
-    <input id = "btn"type="submit" class="btn" value="LOG-IN" name= "submit" id= "input1" onclick="return myFunction()">
-							
-                <p id= "register-link">Don't have an account?
-                <a href="secondPage.html">Register here</a>
+                <small>Error message</small>
+            </div>
+			
+            
+            <button onclick="return myFunction()" id="register" name="register">Submit</button>
+            
+			<p id= "register-link">Don't have an account?
+                <a href="secondpage.html">Register here</a>
                             </p>
-                        </form>
-										
-										
-				
-</body>	
+			
+        </form>
+            
+       
+    </div>
 
+
+</body>
 </html>

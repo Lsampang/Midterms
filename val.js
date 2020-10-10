@@ -96,13 +96,8 @@ function myFunction() {
     } else{
       setSuccessFor(ConfirmPass);
     }
-
-   
     
-    return true;
-    
-
-    
+    return true;    
 }
 
 function setErrorFor(input, message) {
@@ -117,6 +112,18 @@ function setSuccessFor(input) {
   formControl.className = 'form-control success';
 }
 
+function isLetter() {
+  var lastNameValue = document.getElementById("lastName").value;
+  let alp = /[A-Za-z]/;
+  if (alp.test(lastNameValue) == true) {
+    return true;
+  }
+  else{
+    alert("Alphabet lang hoy!!!");
+    return false;
+  }
+}
+
 /*
 function phonenumber(str){
         var phoneno = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
@@ -128,5 +135,19 @@ function phonenumber(str){
             alert("Invalid format for mobile number")
             return false;
         }
+}
+*/
+/*
+
+function Phone(){
+  var cpNumberValue = document.getElementById("cpNumber").value;
+  let no = /[0-9\+]/;
+  if (no.test(cpNumberValue) == true) {
+    return true;
+  }
+  else{
+    alert("Mali yan kapatid!!!");
+    return false;
+  }
 }
 */

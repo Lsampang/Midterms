@@ -16,6 +16,7 @@ function myFunction() {
     var BirthdayValue = document.getElementById("Birthday").value;
     var cpNumberValue = document.getElementById("cpNumber").value;
     var EmailValue = document.getElementById("Email").value;
+    var ConfirmPassValue = document.getElementById("ConfirmPass").value;
 
 
       if (lastNameValue == "") {
@@ -75,7 +76,7 @@ function myFunction() {
       setSuccessFor(Birthday);
     }
 
-    if (cpNumberValue == "") {
+    if (cpNumberValue == "+63 ") {
       setErrorFor(cpNumber, 'Please input your mobile number');
       return false;
     } else{
@@ -89,6 +90,13 @@ function myFunction() {
       setSuccessFor(Email);
     }
 
+    if (ConfirmPassValue == "") {
+      setErrorFor(ConfirmPass, 'Please confirm your password');
+      return false;
+    } else{
+      setSuccessFor(ConfirmPass);
+    }
+
    
     
     return true;
@@ -98,13 +106,27 @@ function myFunction() {
 }
 
 function setErrorFor(input, message) {
-	var formControl = input.parentElement;
-	var small = formControl.querySelector('small');
-	formControl.className = 'form-control error';
-	small.innerText = message;
+  var formControl = input.parentElement;
+  var small = formControl.querySelector('small');
+  formControl.className = 'form-control error';
+  small.innerText = message;
 }
 
 function setSuccessFor(input) {
-	var formControl = input.parentElement;
-	formControl.className = 'form-control success';
+  var formControl = input.parentElement;
+  formControl.className = 'form-control success';
 }
+
+/*
+function phonenumber(str){
+        var phoneno = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
+        if(cpNumber.value.match(phoneno)){
+            return true;
+        }
+
+        else{
+            alert("Invalid format for mobile number")
+            return false;
+        }
+}
+*/

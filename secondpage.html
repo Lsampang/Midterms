@@ -17,14 +17,14 @@
             <div class="form-control">
                 <label for="lastName">Last Name<p style="margin-left: 550%;margin-top: -25%">Username</p></label>
                
-                <input class="form-control-input" style="margin-top: -10px" type="text" placeholder="Last Name" id="lastName" name="lastName" autocomplete="off" />
+                <input class="form-control-input" style="margin-top: -10px" type="text" placeholder="Last Name" id="lastName" name="lastName" autocomplete="off" oninput="isLetter()" />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small style="margin-top: -5px">Error message</small>
             </div>
             <div class="form-control"> 
                 <label for="Username"></label>
-                <input class="form-control-input" style="margin-left: 52%; margin-top: -58px" type="text" placeholder="Username" id="Username" name="Username" autocomplete="off" />
+                <input class="form-control-input" style="margin-left: 52%; margin-top: -58px" type="text" placeholder="Username" id="Username" name="Username" autocomplete="off" maxlength="15" minlength="8" oninput="User()" />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small style="margin-left: 52%;">Error message</small>
@@ -33,21 +33,22 @@
             <div class="form-control">
                 <label style="margin-top: 15px" for="lastName">First Name<p style="margin-left: 442%;margin-top: -20%">M.I</p><p style="margin-left: 545%;margin-top: -45%">Password</p></label>
                
-                <input class="form-control-first" style="margin-top: -15px" type="text" placeholder="First Name" id="firstName" name="firstName" autocomplete="off" />
+                <input class="form-control-first" style="margin-top: -15px" type="text" placeholder="First Name" id="firstName" name="firstName" autocomplete="off" 
+                oninput ="First()" />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
             </div>
             <div class="form-control">
                 <label for="Middle"></label>
-                <input class="form-control-mi" style="margin-left: 42%; margin-top: -58px" type="text" placeholder="M.I" id="Middle" name="Middle" maxlength="2" autocomplete="off" />
+                <input class="form-control-mi" style="margin-left: 42%; margin-top: -58px" type="text" placeholder="M.I" id="Middle" name="Middle" maxlength="2" autocomplete="off" oninput="MI()" />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small style="margin-left: 48%;">Error message</small>
             </div>
             <div class="form-control"> 
                 <label for="Password"></label>
-                <input class="form-control-input" style="margin-left: 52%; margin-top: -58px;margin-bottom: 5px" type="password" placeholder="Password" id="Password" name="Password" />
+                <input class="form-control-input" style="margin-left: 52%; margin-top: -58px;margin-bottom: 5px" type="password" placeholder="Password" id="Password" name="Password" minlength="8" maxlength="20" oninput="Pass()" />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small style="margin-left: 52%;">Error message</small>
@@ -56,7 +57,7 @@
             <div class="form-control">
                 <label style="margin-top: 10px" for="StudentNumber">Student Number<p style="margin-left: 327%;margin-top: -20px">Confirm.Password</p></label>
                
-                <input class="form-control-input" style="margin-top: -10px" type="text" placeholder="Student Number" id="StudentNumber" name="StudentNumber" maxlength="11" autocomplete="off" />
+                <input class="form-control-input" style="margin-top: -10px" type="text" placeholder="Student Number" id="StudentNumber" name="StudentNumber" maxlength="11" autocomplete="off" oninput="StudentNo()" minlength="11" />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
@@ -86,7 +87,7 @@
             </div>
             <div class="form-control">
                 <label for="Birthday"></label>
-                <input class="form-control-bday" type="date" id="Birthday" name="Birthday">
+                <input class="form-control-bday" type="date" id="Birthday" name="Birthday" oninput="Bday()">
                 <script type="text/javascript">
                 var datefield=document.createElement("input")
                 datefield.setAttribute("type", "date")
@@ -110,7 +111,7 @@
             </div>
             <div class="form-control"> 
                 <label for="cpNumber"></label>
-                <input class="form-control-input" style="margin-left: 52%; margin-top: -77px;margin-bottom: 5px" type="text" placeholder="+63 9XXXXXXXXX" id="cpNumber" name="cpNumber" value="+63 " maxlength="14" autocomplete="off" />
+                <input class="form-control-input" style="margin-left: 52%; margin-top: -77px;margin-bottom: 5px" type="text" placeholder="+63 9XXXXXXXXX" id="cpNumber" name="cpNumber" value="+63" maxlength="13" autocomplete="off" oninput="Phone()" />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small style="margin-left: 52%; margin-top: -5%">Error message</small>

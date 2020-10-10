@@ -6,7 +6,9 @@
 }
 
 body {
-	background-color: black;
+	background-image: url("bg1.gif");
+	background-repeat: no-repeat;
+	background-size: cover;
 	font-family: Arial, Helvetica, sans-serif;
 	display: flex;
 	align-items: center;
@@ -17,8 +19,7 @@ body {
 
 .container {
 	background-color: #fff;
-	border-radius: 5px;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
 	overflow: hidden;
 	width: 400px;
 	max-width: 100%;
@@ -26,14 +27,19 @@ body {
 }
 
 .header {
-	border-bottom: 1px solid #f0f0f0;
-	background-color: #f7f7f7;
+	
+	background-color: #f9f9f3;
 	padding: 20px 40px;
 	margin-bottom:50px;
+	float:left;
+	border-bottom: 1px solid #f2f3f4;
 }
 
 .header h2 {
 	margin: 0;
+	font-size:35px;
+	 border-bottom: 5px solid black;
+	 padding: 10px 0
 }
 
 .form {
@@ -53,7 +59,7 @@ body {
 
 .form-control input {
 	border: 2px solid #f0f0f0;
-	border-radius: 4px;
+	border-radius: 5px;
 	display: block;
 	font-family: inherit;
 	font-size: 14px;
@@ -106,7 +112,7 @@ body {
 .form button {
 	background-color: #4CAF50;
 	border: 2px solid #4CAF50;
-	border-radius: 4px;
+	border-radius: 5px;
 	color: #fff;
 	display: block;
 	font-family: inherit;

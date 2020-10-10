@@ -3,13 +3,16 @@ function validateAll(){
     if (myFunction){
         document.form.submit();
     }
+	
 }
 
 function myFunction() {
     
     var usernameValue = document.getElementById("username").value;
     var passwordValue  = document.getElementById("password").value;
-	var letters = /^[A-Za-z]+$/;
+	var letters = /^[A-Za-z\-\_]+$/;
+	var alphanumeric = /^[0-9a-zA-Z]+$/;
+
     
       if (usernameValue == "") {
         setErrorFor(username, 'Username cannot be blank');
@@ -24,32 +27,37 @@ function myFunction() {
     
     
     if (passwordValue == "") {
-        setErrorFor(password, 'Username cannot be blank');
+        setErrorFor(password, 'Password cannot be blank');
  return false;
       }  else {
         setSuccessFor(password);
 
       }
+/*
+	if (usernameValue == letters){
+	setSuccessFor(username);
+		return true;
+}
+else {
+	setErrorFor(username, "User name must inlcude only with alphabet");
+	return false;
+}
 
-   if(usernameValue.value.match(letters))
-      {
-     setSuccessFor(username);
-      return true;
-      }
-      else
-      {
-      alert('Please input alphabet characters only');
-      return false;
-      }
-  
-   
-   
-   
-   
-    
-    return true;
-    
 
+if (passwordValue == alphanumeric){
+	setSuccessFor(password);
+	return true;
+}
+else{
+	setErrorFor(password, "Password must be alphanumeric");
+	return false;
+}
+
+   
+   */
+   
+   
+return true;
     
 }
 
@@ -70,3 +78,4 @@ function setSuccessFor(input) {
 	var formControl = input.parentElement;
 	formControl.className = 'form-control success';
 }
+

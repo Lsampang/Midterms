@@ -4,6 +4,14 @@ function validateAll(){
         document.form.submit();
     }
 	
+	if (CheckPassword){
+		  document.form.submit();
+	}
+	
+	if (CheckUsername){
+		  document.form.submit();
+	}
+	
 }
 
 function myFunction() {
@@ -30,11 +38,14 @@ function myFunction() {
         setErrorFor(password, 'Password cannot be blank');
  return false;
       }  else {
+		 
         setSuccessFor(password);
 
       }
 /*
 	if (usernameValue == letters){
+		allLetter();
+		CheckPassword();
 	setSuccessFor(username);
 		return true;
 }
@@ -54,8 +65,8 @@ else{
 }
 
    
+
    */
-   
    
 return true;
     
@@ -79,3 +90,47 @@ function setSuccessFor(input) {
 	formControl.className = 'form-control success';
 }
 
+
+function Password() {
+  var PasswordValue = document.getElementById("password").value;
+  let pass = /[^a-zA-Z0-9]/;
+  if (pass.test(PasswordValue) == true){
+    if (/[\w\W]/.test(PasswordValue) == true){
+      alert("Alphanumeric only");
+
+      return true;
+    }else{
+      return false;
+    }
+  }
+  else{
+    return true;
+  }
+}
+
+function Username() {
+  var UsernameValue = document.getElementById("username").value;
+  let user = /[\d]/;
+  if (user.test(UsernameValue) == true) {
+    if (/[\w\W\-\_]/.test(UsernameValue) == true) {
+      alert("Please input alphabets and dash/underscore only")
+      return true;
+    }else{
+      return false;
+    }
+  }
+  else{
+    return true;
+  }
+}
+
+ function ShowPassword() {
+    var x = document.getElementById("password").value;
+    if (x.type === "password") {
+    x.type = "text";
+return false;
+    } else {
+    x.type = "password";
+return true;
+      }
+    }

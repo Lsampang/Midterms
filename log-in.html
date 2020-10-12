@@ -14,7 +14,8 @@
             
             <div class="form-control">
                 <label for="username">Username</label>
-                <input type="text" placeholder="username" id="username" name="username" oninput="CheckUsername()" minlength="8" maxlength="15"/>
+                <input type="text" placeholder="username" id="username" name="username"  
+				autocomplete="off" maxlength="15" minlength="8" oninput="Username()" pattern="[a-zA-Z_-]"/>
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
@@ -22,13 +23,29 @@
             
             <div class="form-control">
                 <label for="username">Password</label>
-                <input type="password" placeholder="Password" id="password" name="password" oninput="CheckPassword()" minlength="8" maxlength="20"/>
+                <input type="password" placeholder="Password" id="password" name="password" 
+				minlength="8" maxlength="20" oninput="Password" pattern = "[0-9a-zA-Z]"/>
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
             </div>
-			
-            
+			<div class "form-control">
+
+			<input for= "show" type="checkbox" ischecked="checked" id ="showPass" name="showPass" onclick = "ShowPassword()">
+			<label> Show Password </label>
+            </div>
+<script>
+function ShowPassword() {
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+    x.type = "text";
+return false;
+    } else {
+    x.type = "password";
+return true;
+      }
+    }
+</script>
             <button onclick="return myFunction()" id="register" name="register">Submit</button>
             
 			<p id= "register-link">Don't have an account?

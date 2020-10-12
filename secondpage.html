@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="home.css">
 <script src="val.js"></script>
-    <title>Registration</title>
+<title>Registration</title>
 </head>
 <body>
     <div class="container">
@@ -111,7 +111,8 @@
             </div>
             <div class="form-control"> 
                 <label for="cpNumber"></label>
-                <input class="form-control-input" style="margin-left: 52%; margin-top: -77px;margin-bottom: 5px" type="text" placeholder="+63 9XXXXXXXXX" id="cpNumber" name="cpNumber" value="+63" maxlength="13" autocomplete="off" oninput="Phone()" />
+                <input name="No" id="No" placeholder="+63" disabled="on" class="form-control-input" style="margin-left: 52%; margin-top: -77px;margin-bottom: 5px">
+                <input class="form-control-no" style="margin-left: 57%; margin-top: -45px;margin-bottom: 5px" type="text" id="cpNumber" name="cpNumber" maxlength="10" autocomplete="off" oninput="Phone()" minlength="10" />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small style="margin-left: 52%; margin-top: -5%">Error message</small>

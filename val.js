@@ -195,7 +195,7 @@ function Pass() {
 
 function User() {
   var UsernameValue = document.getElementById("Username").value;
-  let user = /[\d]/;
+  let user = /[\d\$&+,:;=?@#|'<>.^*()%!]/;
   if (user.test(UsernameValue) == true) {
     if (/[\w\W\-\_]/.test(UsernameValue) == true) {
       alert("Dash and Underscore lang pwede Hoy!!!")

@@ -119,7 +119,7 @@ function isLetter() {
     if (/(\s)+/.test(lastNameValue)== true) {
       return true;
     } else{
-      alert("Alphabet lang hoy!!!");
+      alert("Alphabet only");
       return false;
     }   
   }
@@ -135,7 +135,7 @@ function First() {
     if (/(\s)+/.test(firstNameValue)== true) {
       return true;
     } else{
-      alert("Alphabet lang hoy!!!");
+      alert("Alphabet only");
       return false;
     }   
   }
@@ -151,7 +151,7 @@ function MI() {
     if (/(\s)+/.test(MiddleValue)== true) {
       return true;
     } else{
-      alert("Alphabet lang hoy!!!");
+      alert("Alphabet only");
       return false;
     }   
   }
@@ -165,7 +165,7 @@ function StudentNo() {
   let number = /[A-Za-z]/;
   if (number.test(StudentNumberValue) == true){
     if (/[\d\W]/.test(StudentNumber) == true) {
-      alert("Numbers lang Hoy!!!");
+      alert("Please input number only!!!");
       return true;
     }else{
       return false;
@@ -182,7 +182,7 @@ function Pass() {
   let pass = /[^a-zA-Z0-9]/;
   if (pass.test(PasswordValue) == true){
     if (/[\w\W]/.test(PasswordValue) == true){
-      alert("Alphanumeric lang pwede!!!");
+      alert("Alphanumeric only!!!");
       return true;
     }else{
       return false;
@@ -198,7 +198,7 @@ function User() {
   let user = /[\d\$&+,:;=?@#|'<>.^*()%!]/;
   if (user.test(UsernameValue) == true) {
     if (/[\w\W\-\_]/.test(UsernameValue) == true) {
-      alert("Dash and Underscore lang pwede Hoy!!!")
+      alert("Please input alphabets and dash/underscore only")
       return true;
     }else{
       return false;
@@ -214,7 +214,7 @@ function Phone(){
   let num = /[A-Za-z]/;
   if (num.test(cpNumberValue) == true){
     if (/[\d\W]/.test(cpNumberValue) == true){
-      alert("Numbers lang Hoy!!!");
+      alert("Please input numbers only");
       return true;
     }else{
       return false;

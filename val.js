@@ -76,7 +76,7 @@ function myFunction() {
       setSuccessFor(Birthday);
     }
 
-    if (cpNumberValue == "+63 ") {
+    if (cpNumberValue == "") {
       setErrorFor(cpNumber, 'Please input your mobile number');
       return false;
     } else{
@@ -114,89 +114,122 @@ function setSuccessFor(input) {
 
 function isLetter() {
   var lastNameValue = document.getElementById("lastName").value;
-  let alp = /[A-Za-z]/;
-  if (alp.test(lastNameValue) == true) {
-    return true;
+  let alp2 =/[\d\W]/;
+  if (alp2.test(lastNameValue) == true) {
+    if (/(\s)+/.test(lastNameValue)== true) {
+      return true;
+    } else{
+      alert("Alphabet lang hoy!!!");
+      return false;
+    }   
   }
   else{
-    alert("Alphabet lang hoy!!!");
-    return false;
+    return true;
   }
 }
 
 function First() {
   var firstNameValue = document.getElementById("firstName").value;
-  let alp1 = /[A-Za-z]/;
-  if (alp1.test(firstNameValue) == true) {
-    return true;
+  let alp2 =/[\d\W]/;
+  if (alp2.test(firstNameValue) == true) {
+    if (/(\s)+/.test(firstNameValue)== true) {
+      return true;
+    } else{
+      alert("Alphabet lang hoy!!!");
+      return false;
+    }   
   }
   else{
-    alert("Alphabet lang hoy!!!");
-    return false;
+    return true;
   }
 }
 
 function MI() {
   var MiddleValue = document.getElementById("Middle").value;
-  let alp2 = /[A-Za-z]/;
+  let alp2 =/[\d\W]/;
   if (alp2.test(MiddleValue) == true) {
-    return true;
+    if (/(\s)+/.test(MiddleValue)== true) {
+      return true;
+    } else{
+      alert("Alphabet lang hoy!!!");
+      return false;
+    }   
   }
   else{
-    alert("Alphabet lang hoy!!!");
-    return false;
+    return true;
   }
 }
+
 function StudentNo() {
   var StudentNumberValue = document.getElementById("StudentNumber").value;
-  let number = /[0-9]/;
-  if (number.test(StudentNumberValue) == true) {
-    return true;
+  let number = /[A-Za-z]/;
+  if (number.test(StudentNumberValue) == true){
+    if (/[\d\W]/.test(StudentNumber) == true) {
+      alert("Numbers lang Hoy!!!");
+      return true;
+    }else{
+      return false;
+    }
+  
   }
   else{
-    alert("Numbers lang Hoy!!!");
-    return false;
+    return true;
   }
 }
+
 function Pass() {
   var PasswordValue = document.getElementById("Password").value;
-  let pass = /[a-zA-Z0-9]/;
-  if (pass.test(PasswordValue) == true) {
-    return true;
+  let pass = /[^a-zA-Z0-9]/;
+  if (pass.test(PasswordValue) == true){
+    if (/[\w\W]/.test(PasswordValue) == true){
+      alert("Alphanumeric lang pwede!!!");
+      return true;
+    }else{
+      return false;
+    }
   }
   else{
-    alert("Alphanumeric lang pwede!!!");
-    return false;
+    return true;
   }
 }
 
 function User() {
   var UsernameValue = document.getElementById("Username").value;
-  let user = /[A-Za-z\-\_]/;
+  let user = /[\d]/;
   if (user.test(UsernameValue) == true) {
-    return true;
+    if (/[\w\W\-\_]/.test(UsernameValue) == true) {
+      alert("Dash and Underscore lang pwede Hoy!!!")
+      return true;
+    }else{
+      return false;
+    }
   }
   else{
-    alert("Dash and Underscore lang pwede Hoy!!!")
-    return false;
+    return true;
   }
 }
 
 function Phone(){
   var cpNumberValue = document.getElementById("cpNumber").value;
-  let no = /[0-9\+]/;
-  if (no.test(cpNumberValue) == true) {
-    return true;
+  let num = /[A-Za-z]/;
+  if (num.test(cpNumberValue) == true){
+    if (/[\d\W]/.test(cpNumberValue) == true){
+      alert("Numbers lang Hoy!!!");
+      return true;
+    }else{
+      return false;
+    }
+  
   }
   else{
-    alert("Mali yan kapatid!!!");
-    return false;
+    return true;
   }
 }
+/* Not Functiong Well  */
 function Bday(){
   var BirthdayValue = document.getElementById("Birthday").value;
   let day =/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
-  if (day.test(BirthdayValue) <= 2003) {
+  if (day.test(BirthdayValue) >= 2003) {
     alert("You must be 18 years old and above");
     return true;
   }
@@ -204,31 +237,3 @@ function Bday(){
     return false;
   }
 }
-
-/*
-function phonenumber(str){
-        var phoneno = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
-        if(cpNumber.value.match(phoneno)){
-            return true;
-        }
-
-        else{
-            alert("Invalid format for mobile number")
-            return false;
-        }
-}
-*/
-/*
-
-function Phone(){
-  var cpNumberValue = document.getElementById("cpNumber").value;
-  let no = /[0-9\+]/;
-  if (no.test(cpNumberValue) == true) {
-    return true;
-  }
-  else{
-    alert("Mali yan kapatid!!!");
-    return false;
-  }
-}
-*/

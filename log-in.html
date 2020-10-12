@@ -36,14 +36,15 @@
             </div>
 <script>
 function ShowPassword() {
-    var x = document.getElementById("password");
-    if (x.type === "password") {
-    x.type = "text";
+    var pass = document.getElementById("password");
+    if (pass.type === "password") {
+    pass.type = "text";
 return false;
     } else {
-    x.type = "password";
+    pass.type = "password";
 return true;
       }
+
     }
 </script>
             <button onclick="return myFunction()" id="register" name="register">Submit</button>

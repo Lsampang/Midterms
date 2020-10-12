@@ -162,7 +162,7 @@ function MI() {
 
 function StudentNo() {
   var StudentNumberValue = document.getElementById("StudentNumber").value;
-  let number = /[A-Za-z]/;
+  let number = /[A-Za-z\$&+,:;=?@#|'<>.^*()%!]/;
   if (number.test(StudentNumberValue) == true){
     if (/[\d\W]/.test(StudentNumber) == true) {
       alert("Please input number only!!!");
@@ -211,7 +211,7 @@ function User() {
 
 function Phone(){
   var cpNumberValue = document.getElementById("cpNumber").value;
-  let num = /[A-Za-z]/;
+  let num = /[A-Za-z\$&+,:;=?@#|'<>.^*()%!]/;
   if (num.test(cpNumberValue) == true){
     if (/[\d\W]/.test(cpNumberValue) == true){
       alert("Please input numbers only");
@@ -225,7 +225,7 @@ function Phone(){
     return true;
   }
 }
-/* Not Functiong Well  */
+/* Not Functiong Well */
 function Bday(){
   var BirthdayValue = document.getElementById("Birthday").value;
   let day =/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
@@ -236,4 +236,4 @@ function Bday(){
   else{
     return false;
   }
-}
+} 

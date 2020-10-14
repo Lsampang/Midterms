@@ -6,11 +6,7 @@
 }
 
 body {
-  background-image: url("bg4.jpg");
-	background-repeat: no-repeat;
-	/*
-	background-color:black;*/
-	background-size: cover;
+  background-image: url("bg1.gif");
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   align-items: center;
@@ -20,29 +16,22 @@ body {
 }
 
 .container {
-  background-color: #edf2fb;
-  border-radius: 10px;
-	box-shadow: -3px -3px 10px #757c88;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   width: 900px;
   max-width: 100%;
 }
-/*
+
 .header {
   border-bottom: 1px solid #f0f0f0;
   background-color: #f7f7f7;
   padding: 20px 40px;
 }
-*/
+
 .header h2 {
-  	font-size:35px;
-	 border-bottom: 5px solid black;
-	 float:center;
-	  margin-bottom: 20px;
-  padding: 13px 10px;
-  text-align: center;
-  margin-left:10px;
-  margin-right:10px;
+  margin: 0;
 }
 
 .form {
@@ -68,17 +57,17 @@ body {
 
 .form-control-input {
   border: 2px solid #f0f0f0;
-  border-radius: 5px;
+  border-radius: 4px;
   display: block;
   font-family: inherit;
   font-size: 14px;
   padding: 10px;
   width: 48%;
-backgroud-color:white
 }
 
 .form-control-input:focus {
-   border: 2px solid #757c88;
+  outline: 0;
+  border-color: #777;
 }
 
 .form-control.success input {
@@ -119,9 +108,9 @@ backgroud-color:white
 }
 
 .form button {
-  background-color: #2832c2;
-  border: 2px solid #2832c2;
-  border-radius: 5px;
+  background-color: #4CAF50;
+  border: 2px solid #4CAF50;
+  border-radius: 4px;
   color: #fff;
   display: block;
   font-family: inherit;
@@ -129,14 +118,6 @@ backgroud-color:white
   padding: 10px;
   margin-top: 20px;
   width: 100%;
-	float: right;
-margin-bottom: 30px;
-
-
-}
-
-.form button:hover{
-	opacity:0.8;
 }
 
 .form-control-first{

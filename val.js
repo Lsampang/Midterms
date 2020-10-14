@@ -1,6 +1,6 @@
 function validateAll(){
     
-    if (myFunction){
+    if (myFunction()){
         document.form.submit();
     }
 }
@@ -17,14 +17,19 @@ function myFunction() {
     var cpNumberValue = document.getElementById("cpNumber").value;
     var EmailValue = document.getElementById("Email").value;
     var ConfirmPassValue = document.getElementById("ConfirmPass").value;
+    var Emailreg = /[@]ue.edu.ph/gi;
 
 
       if (lastNameValue == "") {
         setErrorFor(lastName, 'Please input your last name');
       return false;
       }  else {
-        setSuccessFor(lastName);
-      
+        if (isLetter()) {
+          setSuccessFor(lastName);
+        }else{
+          setErrorFor(lastName,"Last name must contains only alphabets");
+          return false;
+        }      
       }
 
     
@@ -32,8 +37,12 @@ function myFunction() {
         setErrorFor(Username, 'Please input your username');
       return false;
       }  else {
-        setSuccessFor(Username);
-
+        if (User()) {
+          setSuccessFor(Username);
+        }else{
+          setErrorFor(Username,"Username must contain alphabets, dash, and underscore only");
+          return false;
+        }      
       }
     
     
@@ -41,8 +50,12 @@ function myFunction() {
         setErrorFor(Password, 'Please input your password');
       return false;
       }  else {
-        setSuccessFor(Password);
-
+        if (Pass()) {
+          setSuccessFor(Password);
+        }else{
+          setErrorFor(Password,"Password must contain alphanumeric values only");
+          return false;
+        }      
       }
 
     
@@ -50,16 +63,25 @@ function myFunction() {
         setErrorFor(firstName, 'Please input your first name');
       return false;
       }  else {
-        setSuccessFor(firstName);
-      
+        if (First()) {
+          setSuccessFor(firstName);
+        }else{
+          setErrorFor(firstName,"First name contains only alphabets");
+          return false;
+        }      
       }
 
     if (StudentNumberValue == "") {
       setErrorFor(StudentNumber, 'Please input your student number');
       return false;
-    } else{
-      setSuccessFor(StudentNumber);
-    }
+    } else {
+        if (StudentNo()) {
+          setSuccessFor(StudentNumber);
+        }else{
+          setErrorFor(StudentNumber,"Student number must contain numerical value only");
+          return false;
+        }      
+      }
     
     if (YearValue == "") {
         setErrorFor(Year, 'Please input your student year');
@@ -74,20 +96,41 @@ function myFunction() {
       return false;
     } else{
       setSuccessFor(Birthday);
+      var newbdayValue = BirthdayValue.replace(/-/,"");
+    }
+    if (newbdayValue > "20021010"){
+      setErrorFor(Birthday, "You must be 18 and above");
+    }else{
+      setSuccessFor(Birthday);
     }
 
     if (cpNumberValue == "") {
       setErrorFor(cpNumber, 'Please input your mobile number');
       return false;
-    } else{
-      setSuccessFor(cpNumber);
-    }
-
+    } else {
+        if (Phone()) {
+          setSuccessFor(cpNumber);
+        }else{
+          setErrorFor(cpNumber,"Mobile number number must contain numerical value only");
+          return false;
+        }      
+      }
+    
     if (EmailValue == "") {
       setErrorFor(Email, 'Please input your Email');
       return false;
-    } else{
-      setSuccessFor(Email);
+    }if (Emailreg.test(EmailValue)) {
+      if(EmailValue.length < 15){
+        setErrorFor(Email, "Please complete your ue email");
+        return false;
+      }else{
+        setSuccessFor(Email);
+      }
+      
+    } 
+    else{
+      setErrorFor(Email, "Please input valid ue email");
+      return false;
     }
 
     if (ConfirmPassValue == "") {
@@ -119,7 +162,7 @@ function isLetter() {
     if (/(\s)+/.test(lastNameValue)== true) {
       return true;
     } else{
-      alert("Alphabet only");
+      alert("Alphabet lang hoy!!!");
       return false;
     }   
   }
@@ -135,7 +178,7 @@ function First() {
     if (/(\s)+/.test(firstNameValue)== true) {
       return true;
     } else{
-      alert("Alphabet only");
+      alert("Alphabet lang hoy!!!");
       return false;
     }   
   }
@@ -151,7 +194,7 @@ function MI() {
     if (/(\s)+/.test(MiddleValue)== true) {
       return true;
     } else{
-      alert("Alphabet only");
+      alert("Alphabet lang hoy!!!");
       return false;
     }   
   }
@@ -162,27 +205,27 @@ function MI() {
 
 function StudentNo() {
   var StudentNumberValue = document.getElementById("StudentNumber").value;
-  let number = /[A-Za-z]/;
-  if (number.test(StudentNumberValue) == true){
-    if (/[\d\W]/.test(StudentNumber) == true) {
-      alert("Please input number only!!!");
-      return true;
-    }else{
+  if (/[\d\W]/.test(StudentNumberValue) == true){
+    if (/[A-Za-z\$&+,:;=?@#|'<>.^*()%!]+$/.test(StudentNumberValue) == true) {
+      alert("mali");
       return false;
+    }else{
+      StudentNumberValue = StudentNumberValue.slice(0,-1);
+      return true;
     }
-  
   }
   else{
+    alert("mali");
     return true;
   }
-}
+  }
 
 function Pass() {
   var PasswordValue = document.getElementById("Password").value;
   let pass = /[^a-zA-Z0-9]/;
   if (pass.test(PasswordValue) == true){
     if (/[\w\W]/.test(PasswordValue) == true){
-      alert("Alphanumeric only!!!");
+      alert("Alphanumeric lang pwede!!!");
       return true;
     }else{
       return false;
@@ -196,44 +239,35 @@ function Pass() {
 function User() {
   var UsernameValue = document.getElementById("Username").value;
   let user = /[\d\$&+,:;=?@#|'<>.^*()%!]/;
-  if (user.test(UsernameValue) == true) {
-    if (/[\w\W\-\_]/.test(UsernameValue) == true) {
-      alert("Please input alphabets and dash/underscore only")
-      return true;
-    }else{
+  if (/[A-Za-z\_\-]/.test(UsernameValue) == true) {
+    if (/[\d\$&+,:;=?@#|'<>.^*()%!]+$]/.test(UsernameValue) == true){
+      alert("mali");
       return false;
+    }else{
+      UsernameValue = UsernameValue.slice(0,-1);
+      return true;
     }
   }
   else{
+    alert("mali");
     return true;
   }
 }
 
+
 function Phone(){
   var cpNumberValue = document.getElementById("cpNumber").value;
-  let num = /[A-Za-z]/;
-  if (num.test(cpNumberValue) == true){
-    if (/[\d\W]/.test(cpNumberValue) == true){
-      alert("Please input numbers only");
-      return true;
-    }else{
+  if (/[\d\W]/.test(cpNumberValue) == true){
+    if (/[A-Za-z\$&+,:;=?@#|'<>.^*()%!]+$/.test(cpNumberValue) == true) {
+      alert("mali");
       return false;
+    }else{
+      cpNumberValue = cpNumberValue.slice(0,-1);
+      return true;
     }
-  
   }
   else{
+    alert("mali");
     return true;
-  }
-}
-/* Not Functiong Well  */
-function Bday(){
-  var BirthdayValue = document.getElementById("Birthday").value;
-  let day =/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
-  if (day.test(BirthdayValue) >= 2003) {
-    alert("You must be 18 years old and above");
-    return true;
-  }
-  else{
-    return false;
   }
 }
